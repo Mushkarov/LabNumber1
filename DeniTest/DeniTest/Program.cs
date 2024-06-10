@@ -49,7 +49,7 @@ namespace Lab1
             var chek3 = (A / B) - B;
             if (chek3 >= -1 & chek3 <= 1)
             {
-                C = chek3;
+                C = chek;
             }
             else
             {
