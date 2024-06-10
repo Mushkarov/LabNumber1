@@ -8,60 +8,48 @@ namespace Lab1
     internal class Program
     {
         static void Main(string[] args)
-        {
-
-
-                
-                double C = 0;
-                double A = 0;
-                double B = 0;
-           for (var i = 0; i == A; i++)
+        {  
+            double C;
+            double A;
+            double B;
+            while (true)
             {
-                
-               
-                Console.WriteLine("Введите чисто А");
-                
-                var chek = double.Parse(Console.ReadLine());
-                if (chek != 0)
+                while (true)
                 {
-                    A = chek;
-                    break;
-                }
-                else
-                {
+                    Console.WriteLine("Введите чисто А");
+
+                    var chekOne = Console.ReadLine();
+                    if (double.TryParse(chekOne, out A))
+                    {
+                        break;
+                    }
                     Console.WriteLine("Некорректный ввод данных");
-
-                    i--;
                 }
-            }
+                while (true)
+                {
+                    Console.WriteLine("Введите чисто B");
+                    var chekTwo = (Console.ReadLine());
+                    var R = double.TryParse(chekTwo, out B);
+                    if (B != 0 & R)
+                    {
 
-            Console.WriteLine("Введите чисто B");
-            var chek1 = double.Parse(Console.ReadLine());
-            if (chek1 != 0)
-            {
-                B = chek1;
+                        break;
+                    }
+                    Console.WriteLine("Некорректный ввод данных");
+                }
+                var temp = (A / B) - B;
+                if (temp >= -1 & temp <= 1)
+                {
+                    C = temp;
+                    break;
+                }                              
+                    Console.WriteLine("Некорректно введены данные , выход за область значений");              
             }
-            else
-            {
-                Console.WriteLine("Некорректный ввод данных");
-
-            }
-            var chek3 = (A / B) - B;
-            if (chek3 >= -1 & chek3 <= 1)
-            {
-                C = chek;
-            }
-            else
-            {
-                Console.WriteLine("Некорректный ввод данных");
-            }
-            var I = Math.Acos(C);
-            var result = I - (B / 2 * Math.Log(Math.Pow(A, 2) + Math.Pow(B, 2)));
-            Console.WriteLine(result);
-            Console.ReadLine();
-            Console.Clear();
-
-
+                var I = Math.Acos(C);
+                var result = I - (B / 2 * Math.Log(Math.Pow(A, 2) + Math.Pow(B, 2)));
+                Console.WriteLine(result);
+                Console.ReadLine();
+                Console.Clear();            
         }
         
     }
