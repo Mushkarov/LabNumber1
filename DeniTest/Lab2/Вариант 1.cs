@@ -25,7 +25,12 @@
                     Console.WriteLine("Некорректный ввод данный");
                     continue;
                 }
-                
+                if (X > -0.4 || (Math.Pow(X, 2) + Math.Pow(Y, 2)) > 1)
+                {
+
+                    Console.WriteLine("Точка находится вне заштрихованной области");
+                    continue;
+                }
                 if (X < -0.4 && (Math.Pow(X, 2) + Math.Pow(Y, 2)) < 1)
                 {
                     Console.WriteLine("Точка находтся внутри заштрихованной области");
@@ -37,11 +42,7 @@
                     continue;
 
                 }
-                if (X > -0.4 || (Math.Pow(X, 2) + Math.Pow(Y, 2)) > 1)
-                {
-
-                    Console.WriteLine("Точка находится вне заштрихованной области");
-                }
+                
             }
         }
     }
