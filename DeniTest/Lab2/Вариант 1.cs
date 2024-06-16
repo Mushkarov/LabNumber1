@@ -16,8 +16,7 @@
                     Console.WriteLine("Некорректный ввод данный");
                     continue;
                 }
-               
-                
+ 
                 Console.WriteLine("Введите значение Y");
                 temp = Console.ReadLine();
                 if (!double.TryParse(temp, out double Y))
@@ -25,24 +24,22 @@
                     Console.WriteLine("Некорректный ввод данный");
                     continue;
                 }
-                if (X > -0.4 || (Math.Pow(X, 2) + Math.Pow(Y, 2)) > 1)
+                if(X < -0.4 && Math.Pow(X, 2) + Math.Pow(Y, 2) < 1)
                 {
-
-                    Console.WriteLine("Точка находится вне заштрихованной области");
-                    continue;
-                }
-                if (X < -0.4 && (Math.Pow(X, 2) + Math.Pow(Y, 2)) < 1)
-                {
-                    Console.WriteLine("Точка находтся внутри заштрихованной области");
-                    continue;
+                    Console.WriteLine("Точка находится в заштрихованной области");
                 }
                 else
                 {
-                    Console.WriteLine("Точка находится на границе заштрихованного поля");
-                    continue;
+                    if (X > -0.4 || Math.Pow(X, 2) + Math.Pow(Y, 2) > 1)
+                    {
 
+                        Console.WriteLine("Точка находится вне области");
+                    }
+                    else 
+                    {
+                        Console.WriteLine("Точка на границе");
+                    }
                 }
-                
             }
         }
     }

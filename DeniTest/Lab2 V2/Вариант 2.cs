@@ -18,11 +18,9 @@
                     Console.WriteLine("Некорректный ввод данный");
                     continue;
                 }
-                if (X > 0.5)
-                {
-                 
-                    Console.WriteLine("Точка находится вне заштрихованного поля");
-                    continue;
+               if (X > 0.5)
+               {
+                    Console.WriteLine("Точка находится вне заштрихованной области");
                 }
 
                 Console.WriteLine("Введите значение Y");
@@ -32,31 +30,33 @@
                     Console.WriteLine("Некорректный ввод данный");
                     continue;
                 }
-                if (X > 0.5) 
+                if (Math.Pow(X , 2) + Math.Pow(Y , 2) < 1)
                 {
-                    Console.WriteLine("Не заштрихованный");
-                    continue;
+                    Console.WriteLine("Точка находится вне заштрихованной области");
                 }
-               if(X < 0.5 && Math.Pow(X, 2) + Math.Pow(Y, 2) < 1)
-               {
-                    Console.WriteLine("Не заштрихованный");
-                    continue;
-
-               }
-               if(X <= 0.5 && Math.Pow(X, 2) + Math.Pow(Y, 2) > 1 && Y > 0)
+                if (Math.Pow(X, 2) + Math.Pow(Y, 2) > 1 && Y > 0)
                 {
-
-                    Console.WriteLine("Не заштрихованный");
-                    continue;
+                    Console.WriteLine("Точка находится вне заштрихованной области");
+                }
+                if (Math.Pow(X, 2) + Math.Pow(Y, 2) > 1 && Y < 0 && X < 0.5)
+                {
+                    Console.WriteLine("Точка находится в заштрихованной области");
+                }
+                if (Math.Pow(X, 2) + Math.Pow(Y, 2) == 1 && X < 0.5 && Y < 0)
+                {
+                    Console.WriteLine("Точка находитсмя на границе");
+                }
+                if ( X < -1 && Y == 0  | X == 0 && Y < -1)
+                {
+                    Console.WriteLine("Точка находитсмя на границе");
+                }
+                if (X == 0.5 && Math.Pow(X, 2) + Math.Pow(Y, 2) > 1 && Y < -0.5)
+                {
+                    Console.WriteLine("Точка находитсмя на границе");
 
                 }
-               if (X < 0.5 &&Math.Pow(X, 2) + Math.Pow(Y, 2) > 1 && Y < 0)
-               {
-                    Console.WriteLine("Заштрихованный");
-                    continue;
 
-               }
-                Console.WriteLine("На границе");
+
             }
         }
     }
